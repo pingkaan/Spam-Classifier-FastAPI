@@ -1,6 +1,6 @@
 import os
 from fastapi import FastAPI, Request
-from fastapi.response import HTMLResponse
+from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 import pickle
@@ -54,4 +54,5 @@ async def predict_email(request: EmailRequest):
     return {
         "prediction": str(prediction),
         "confidence": round(float(probability), 4)
+
     }
